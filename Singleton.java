@@ -2,16 +2,18 @@
 public final class Singleton {
 
     private static Singleton instance;
-    public int x;
-    public int y;
+    private int x;
+    private int y;
+    private int z;
 
     private Singleton(){
         super();
     }
 
-    private Singleton(int x, int y){
+    private Singleton(int x, int y, int z){
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     public static Singleton getInstance(){
@@ -21,19 +23,19 @@ public final class Singleton {
         return instance;
     }
 
-    public float moyenne (int x, int y) {
-        return somme(x, y) / 2 ;
+    public float moyenne (int x, int y, int Z) {
+        return somme(x, y, z) / 3 ;
     }
 
-    public int somme (int x, int y) {
-        return x + y ;
+    public int somme (int x, int y, int z) {
+        return x + y + z ;
     }
 
-    public int Produit (int x, int y) {
-        return x * y ;
+    public int Produit (int x, int y, int z) {
+        return x * y * z;
     }
 
-    public void affiche () {
-        System.out.println("Les operations : " + this.x + " et " + this.y);
+    public void affiche (int x, int y, int z) {
+        System.out.println("Les operations : " + x + " et " + y+" et "+z);
     }
 }
